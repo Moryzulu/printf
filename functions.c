@@ -28,13 +28,20 @@ void _print_char_ptr(char *specifier, va_list args)
 	if (*specifier == 's')
 	{
 	char *s = va_arg(args, char*);
+	if (s != NULL)
+	{
 		while (s[j])
 		{
 			_putchar(s[j]);
 			j++;
 		}
 	}
-
+	_putchar('(');
+	_putchar('n');
+	_putchar('u');
+	_putchar('l');
+	_putchar('l');
+	_putchar(')');
 }
 /**
  * print_number - function to print number
