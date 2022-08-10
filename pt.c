@@ -14,8 +14,16 @@ int _printf(const char *format, ...)
 	va_list args;
 	c_s conv_specifiers[] = {
 		{"%", _print_int},
+		{"d", _print_int},
+		{"i", _print_int},
+		{"u", _print_int},
+		{"o", _print_int},
+		{"x", _print_int},
+		{"X", _print_int},
 		{"c", _print_char},
 		{"s", _print_char_ptr},
+		{"p", _print_char_ptr},
+		{"r", _print_char_ptr},
 
 	};
 	va_start(args, format);
