@@ -43,6 +43,7 @@ void _print_char_ptr(char *specifier, va_list args)
 	_putchar('l');
 	_putchar(')');
 }
+}
 /**
  * print_number - function to print number
  * @n: integer argument
