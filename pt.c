@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		{"c", _print_char},
 		{"s", _print_char_ptr},
 		{"p", _print_char_ptr},
-		{"r", _print_char_ptr},
+		{"r", _print_char_ptr}
 
 	};
 	va_start(args, format);
