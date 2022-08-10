@@ -48,3 +48,4 @@ void _print_int(char *specifier, va_list args)
 		}
 		print_number(oct);
 	}
+}
