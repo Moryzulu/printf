@@ -24,7 +24,6 @@ int _printf(const char *format, ...)
 		{"s", _print_char_ptr},
 		{"p", _print_char_ptr},
 		{"r", _print_char_ptr}
-
 	};
 	va_start(args, format);
 	while (format != NULL && format[i])
