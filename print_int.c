@@ -11,19 +11,22 @@ void _print_int(char *specifier, va_list args)
 	if (*specifier == 'd')
 	{
 		int n = (int) va_arg(args, int);
+
 		print_number(n);
 	}
 	if (*specifier == 'i')
 	{
 		int n = (int) va_arg(args, int);
+
 		print_number(n);
 	}
 	if (*specifier == 'u')
 	{
 		int n = (unsigned int)va_arg(args, int);
+
 		if (n < 0)
 		{
-			n *= - 1;
+			n *= -1;
 		}
 		print_number(n);
 	}
@@ -31,11 +34,11 @@ void _print_int(char *specifier, va_list args)
 	{
 		int oct = 0;
 		int mul = 1;
-
 		int n = (unsigned int)va_arg(args, int);
+
 		if (n < 0)
 		{
-			n *= - 1;
+			n *= -1;
 		}
 		while (n != 0)
 		{
