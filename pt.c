@@ -12,14 +12,14 @@ int _printf(const char *format, ...)
 	int j;
 	int a = 0;
 	va_list args;
-	c_s conv_specifiers[] = {
-		{"%", _print_int},
-		{"d", _print_int},
-		{"i", _print_int},
-		{"u", _print_int},
-		{"o", _print_int},
-		{"x", _print_int},
-		{"X", _print_int},
+	c_s conv[] = {
+		{"%", _print_number},
+		{"d", _print_number},
+		{"i", _print_number},
+		{"u", _print_number},
+		{"o", _print_number},
+		{"x", _print_number},
+		{"X", _print_number},
 		{"c", _print_char},
 		{"s", _print_char_ptr},
 		{"p", _print_char_ptr},
@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format != NULL && format[i])
 	{
-		if (format[i] != *conv_specifiers[0].specifier)
+		if (format[i] != *conv[0].sp)
 		{
 			_putchar(format[i]);
 		}
@@ -36,12 +36,12 @@ int _printf(const char *format, ...)
 		{
 			for (j = 1; j < 12; j++)
 			{
-				if (format[i + 1] == *conv_specifiers[j].specifier)
+				if (format[i + 1] == *conv[j].sp)
 				{
 					format++;
-					conv_specifiers[j].f(conv_specifiers[j].specifier, args);
+					conv[j].f(conv[j].sp, args);
 				}
-				if (format[i + 1] == *conv_specifiers[0].specifier)
+				if (format[i + 1] == *conv[0].sp)
 				{
 					_putchar('%');
 					a = -1;

@@ -2,48 +2,32 @@
 #include <limits.h>
 #include <stddef.h>
 /**
- * _print_int - function to print integer
+ * _print_number - function to print numbers
  * @args: valist argument
- * @specifier: ponter specifier for integer
+ * @specifier: ponter specifier for number
  *
- * Return: an integer type
+ * Return: void
  */
-void _print_int(char *specifier, va_list args)
+void _print_number(char *specifier, va_list args)
 {
 	if (*specifier == 'd')
 	{
-		int n = (int) va_arg(args, int);
-		print_number(n);
+		int n = va_arg(args, int);
+		print_int(n);
 	}
 	if (*specifier == 'i')
 	{
-		int n = (int) va_arg(args, int);
-		print_number(n);
+		int n = va_arg(args, int);
+		print_int(n);
 	}
 	if (*specifier == 'u')
 	{
-		int n = (unsigned int)va_arg(args, int);
-		if (n < 0)
-		{
-			n *= -1;
-		}
-		print_number(n);
+		unsigned int n = va_arg(args, unsigned int);
+		print_unsi_int(n);
 	}
 	if (*specifier == 'o')
 	{
-		int oct = 0;
-		int mul = 1;
-		int n = (unsigned int)va_arg(args, int);
-		if (n < 0)
-		{
-			n *= -1;
-		}
-		while (n != 0)
-		{
-			oct = (n % 8) * mul;
-			mul = mul * 10;
-			n = n / 8;
-		}
-		print_number(oct);
+		unsigned int n = va_arg(args, unsigned int);
+		print_oct(n);
 	}
 }
