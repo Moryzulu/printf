@@ -27,17 +27,8 @@ void _print_char_ptr(char *specifier, va_list args)
 
 	if (*specifier == 's')
 	{
-<<<<<<< HEAD
 		char *s = va_arg(args, char*);
-
 		if (s != NULL)
-=======
-	char *s = va_arg(args, char*);
-
-	if (s != NULL)
-	{
-		while (s[j])
->>>>>>> 936a46860e9d9080b39cffb0d6161fc9bf067033
 		{
 			while (s[j])
 			{
