@@ -13,7 +13,6 @@ int _printf(const char *format, ...)
 	int a = 0;
 	va_list args;
 	c_s conv[] = {
-		{"%", _print_number},
 		{"d", _print_number},
 		{"i", _print_number},
 		{"u", _print_number},
@@ -28,20 +27,20 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format != NULL && format[i])
 	{
-		if (format[i] != *conv[0].sp)
+		if (format[i] != '%')
 		{
 			_putchar(format[i]);
 		}
 		else
 		{
-			for (j = 1; j < 12; j++)
+			for (j = 0; j < 10; j++)
 			{
 				if (format[i + 1] == *conv[j].sp)
 				{
 					format++;
 					conv[j].f(conv[j].sp, args);
 				}
-				if (format[i + 1] == *conv[0].sp)
+				if (format[i + 1] == '%')
 				{
 					_putchar('%');
 					a = -1;
