@@ -13,31 +13,37 @@ void _print_number(char *specifier, va_list args)
 	if (*specifier == 'd')
 	{
 		int n = va_arg(args, int);
+
 		print_int(n);
 	}
 	if (*specifier == 'i')
 	{
 		int n = va_arg(args, int);
+
 		print_int(n);
 	}
 	if (*specifier == 'u')
 	{
 		unsigned int n = va_arg(args, unsigned int);
+
 		print_unsi_int(n);
 	}
 	if (*specifier == 'o')
 	{
 		unsigned int n = va_arg(args, unsigned int);
+
 		print_oct(n);
 	}
 	if (*specifier == 'x')
 	{
 		unsigned int n = va_arg(args, unsigned int);
+
 		print_lowerhex(n);
 	}
 	if (*specifier == 'X')
 	{
 		unsigned int n = va_arg(args, unsigned int);
+
 		print_upperhex(n);
 	}
 }

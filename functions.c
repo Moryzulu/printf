@@ -49,9 +49,10 @@ void _print_char_ptr(char *specifier, va_list args)
 	}
 }
 /**
- * print_number - function to print number
+ * print_int - function to print int number
  * @n: integer argument
- * Return: number
+ *
+ * Return: void
  */
 void print_int(int n)
 {
@@ -66,20 +67,3 @@ void print_int(int n)
 	}
 	_putchar((n % 10) + '0');
 }
-/*void print_int(int n)
-{
-	if (n == 0)
-	{
-		_putchar('0');
-	}
-	if (n < 0)
-	{
-		n = n * -1;
-		_putchar('-');
-	}
-	if (n / 10)
-	{
-		print_int((n / 10));
-	}
-	_putchar((n % 10) + '0');
-}*/

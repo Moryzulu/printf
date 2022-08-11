@@ -44,7 +44,7 @@ void print_oct(unsigned int n)
 }
 /**
  * print_lowerhex - function to print lower hexa number
- * @n: unsigned int 
+ * @n: unsigned int
  *
  * Return: void
  */
@@ -84,7 +84,7 @@ void print_lowerhex(unsigned int n)
 }
 /**
  * print_upperhex - function to print upper hexa number
- * @n: unsigned int 
+ * @n: unsigned int
  *
  * Return: void
  */
