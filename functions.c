@@ -55,6 +55,19 @@ void _print_char_ptr(char *specifier, va_list args)
  */
 void print_int(int n)
 {
+	if (n < 0)
+	{
+		n = n * -1;
+		_putchar('-');
+	}
+	if (n / 10)
+	{
+		print_int((n / 10));
+	}
+	_putchar((n % 10) + '0');
+}
+/*void print_int(int n)
+{
 	if (n == 0)
 	{
 		_putchar('0');
@@ -66,7 +79,7 @@ void print_int(int n)
 	}
 	if (n / 10)
 	{
-		print_int(n / 10);
+		print_int((n / 10));
 	}
 	_putchar((n % 10) + '0');
-}
+}*/

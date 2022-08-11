@@ -30,4 +30,14 @@ void _print_number(char *specifier, va_list args)
 		unsigned int n = va_arg(args, unsigned int);
 		print_oct(n);
 	}
+	if (*specifier == 'x')
+	{
+		unsigned int n = va_arg(args, unsigned int);
+		print_lowerhex(n);
+	}
+	if (*specifier == 'X')
+	{
+		unsigned int n = va_arg(args, unsigned int);
+		print_upperhex(n);
+	}
 }

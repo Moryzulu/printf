@@ -11,6 +11,8 @@ int _strcmp(char *s1, char *s2);
 void print_int(int n);
 void print_unsi_int(unsigned int n);
 void print_oct(unsigned int n);
+void print_lowerhex(unsigned int n);
+void print_upperhex(unsigned int n);
 /**
  * struct conversion_specifiers - struct types
  * @sp: The data specifier
