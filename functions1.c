@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include "main.h"
-#include <limits.h>
 /**
  * print_unsi_int - function to print unsigned int number
  * @n: unsigned int
@@ -10,17 +9,37 @@
 int print_unsi_int(unsigned int n)
 {
 	int len = 0;
+	unsigned int lastDigit;
+	unsigned int reversed = 0;
+	int count = 0;
 
 	if (n == 0)
 	{
 		_putchar('0');
 		len++;
 	}
-	if (n / 10)
+	lastDigit = n % 10;
+	n = n / 10;
+	while (n > 0)
 	{
-		print_unsi_int(n / 10);
+		reversed = reversed * 10 + (n % 10);
+		n = n / 10;
+		count++;
 	}
-	_putchar((n % 10) + '0');
+	while (reversed > 0)
+	{
+		_putchar((reversed % 10) + '0');
+		reversed = reversed / 10;
+		len++;
+		count--;
+	}
+	while (count != 0)
+	{
+		_putchar('0');
+		len++;
+		count--;
+	}
+	_putchar(lastDigit + '0');
 	len++;
 	return (len);
 }
