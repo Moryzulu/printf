@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		{"c", _print_char},
 		{"s", _print_char_ptr},
 		{"b", _print_number},
-		{"r", _print_char_ptr}
+		{"r", _print_rev_str}
 	};
 	va_start(args, format);
 	if (format == NULL)

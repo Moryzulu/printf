@@ -45,6 +45,48 @@ int _print_char_ptr(char *specifier, va_list args)
 	return (len);
 }
 /**
+ * _print_rev_str - function to print string in reverse
+ * @specifier: specifier argument of pointer type
+ * @args: string argument
+ *
+ * Return: how many bytes of printed text
+ */
+int _print_rev_str(char *specifier, va_list args)
+{
+	int i = 0;
+	int j = 0;
+	int len = 0;
+	int slen = 0;
+	char arr[100];
+
+	if (*specifier == 'r')
+	{
+		char *s = va_arg(args, char*);
+
+		if (!s)
+		{
+			s = "(null)";
+		}
+		else
+		{
+			while (s[slen] != '\0')
+			{
+				slen++;
+			}
+			for (i = 0; i < slen; i++)
+			{
+				arr[i] = s[slen - i - 1];
+			}
+			for (j = 0; j < slen; j++)
+			{
+				_putchar(arr[j]);
+				len++;
+			}
+		}
+	}
+	return (len);
+}
+/**
  * print_int - function to print int number
  * @n: integer argument
  *
