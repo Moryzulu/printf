@@ -48,5 +48,11 @@ int _print_number(char *specifier, va_list args)
 
 		len = print_upperhex(n);
 	}
+	if (*specifier == 'b')
+	{
+		unsigned int n = va_arg(args, unsigned int);
+
+		len = print_binary(n);
+	}
 	return (len);
 }

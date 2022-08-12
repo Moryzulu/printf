@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 		{"X", _print_number},
 		{"c", _print_char},
 		{"s", _print_char_ptr},
-		{"p", _print_char_ptr},
+		{"b", _print_number},
 		{"r", _print_char_ptr}
 	};
 	va_start(args, format);

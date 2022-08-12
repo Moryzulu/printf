@@ -13,6 +13,7 @@ int print_unsi_int(unsigned int n);
 int print_oct(unsigned int n);
 int print_lowerhex(unsigned int n);
 int print_upperhex(unsigned int n);
+int print_binary(unsigned int n);
 /**
  * struct conversion_specifiers - struct types
  * @sp: The data specifier
