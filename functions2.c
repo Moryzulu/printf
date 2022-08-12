@@ -17,7 +17,7 @@ int print_binary(unsigned int n)
 		arr[i] = n % 2;
 		n = n / 2;
 	}
-	for ( i = i -1 ; i >= 0; i--)
+	for (i = i - 1 ; i >= 0; i--)
 	{
 		_putchar(arr[i] + '0');
 		len++;
