@@ -12,6 +12,11 @@ int print_binary(unsigned int n)
 	int i;
 	int arr[100];
 
+	if (n == 0)
+	{
+		_putchar('0');
+		len++;
+	}
 	for (i = 0; n > 0; i++)
 	{
 		arr[i] = n % 2;
