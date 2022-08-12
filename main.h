@@ -8,11 +8,11 @@
 int _putchar(char c);
 int _printf(const char *format, ...);
 int _strcmp(char *s1, char *s2);
-void print_int(int n);
-void print_unsi_int(unsigned int n);
-void print_oct(unsigned int n);
-void print_lowerhex(unsigned int n);
-void print_upperhex(unsigned int n);
+int print_int(int n);
+int print_unsi_int(unsigned int n);
+int print_oct(unsigned int n);
+int print_lowerhex(unsigned int n);
+int print_upperhex(unsigned int n);
 /**
  * struct conversion_specifiers - struct types
  * @sp: The data specifier
@@ -23,9 +23,9 @@ void print_upperhex(unsigned int n);
 typedef struct conversion_specifiers
 {
 	char *sp;
-	void (*f)(char *sp, va_list args);
+	int (*f)(char *sp, va_list args);
 } c_s;
-void _print_char(char *sp, va_list args);
-void _print_char_ptr(char *sp, va_list args);
-void _print_number(char *sp, va_list args);
+int _print_char(char *sp, va_list args);
+int _print_char_ptr(char *sp, va_list args);
+int _print_number(char *sp, va_list args);
 #endif
