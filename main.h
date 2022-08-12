@@ -8,7 +8,7 @@
 int _putchar(char c);
 int _printf(const char *format, ...);
 int _strcmp(char *s1, char *s2);
-int print_int(int n);
+int print_int(long n);
 int print_unsi_int(unsigned int n);
 int print_oct(unsigned int n);
 int print_lowerhex(unsigned int n);

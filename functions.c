@@ -50,22 +50,47 @@ int _print_char_ptr(char *specifier, va_list args)
  *
  * Return: how many bytes of printed text
  */
-int print_int(int n)
+
+int print_int(long n)
 {
 	int len = 0;
+	int lastDigit;
+	int reversed = 0;
+	int count = 0;
 
+	if (n == 0)
+	{
+		_putchar('0');
+		len++;
+	}
 	if (n < 0)
 	{
-		n = n * -1;
 		_putchar('-');
 		len++;
-
+		n = n * -1;
 	}
-	if (n / 10)
+	lastDigit = n % 10;
+	n = n / 10;
+	while (n > 0)
 	{
-		print_int((n / 10));
+		reversed = reversed * 10 + (n % 10);
+		n = n / 10;
+		count++;
 	}
-	_putchar((n % 10) + '0');
+	while (reversed > 0)
+	{
+		_putchar((reversed % 10) + '0');
+		reversed = reversed / 10;
+		len++;
+		count--;
+	}
+	while (count != 0)
+	{
+		_putchar('0');
+		len++;
+		count--;
+	}
+	_putchar(lastDigit + '0');
 	len++;
 	return (len);
 }
