@@ -12,37 +12,35 @@ int _printf(const char *format, ...)
 	int j;
 	int a = 0;
 	va_list args;
-	c_s conv_specifiers[] = {
-		{"%", _print_int},
-		{"d", _print_int},
-		{"i", _print_int},
-		{"u", _print_int},
-		{"o", _print_int},
-		{"x", _print_int},
-		{"X", _print_int},
+	c_s conv[] = {
+		{"d", _print_number},
+		{"i", _print_number},
+		{"u", _print_number},
+		{"o", _print_number},
+		{"x", _print_number},
+		{"X", _print_number},
 		{"c", _print_char},
 		{"s", _print_char_ptr},
 		{"p", _print_char_ptr},
-		{"r", _print_char_ptr},
-
+		{"r", _print_char_ptr}
 	};
 	va_start(args, format);
 	while (format != NULL && format[i])
 	{
-		if (format[i] != *conv_specifiers[0].specifier)
+		if (format[i] != '%')
 		{
 			_putchar(format[i]);
 		}
 		else
 		{
-			for (j = 1; j < 12; j++)
+			for (j = 0; j < 10; j++)
 			{
-				if (format[i + 1] == *conv_specifiers[j].specifier)
+				if (format[i + 1] == *conv[j].sp)
 				{
 					format++;
-					conv_specifiers[j].f(conv_specifiers[j].specifier, args);
+					conv[j].f(conv[j].sp, args);
 				}
-				if (format[i + 1] == *conv_specifiers[0].specifier)
+				if (format[i + 1] == '%')
 				{
 					_putchar('%');
 					a = -1;
