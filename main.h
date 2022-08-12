@@ -30,4 +30,5 @@ int _print_char(char *sp, va_list args);
 int _print_char_ptr(char *sp, va_list args);
 int _print_number(char *sp, va_list args);
 int _print_rev_str(char *specifier, va_list args);
+int _print_rot13(char *specifier, va_list args);
 #endif

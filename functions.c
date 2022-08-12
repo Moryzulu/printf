@@ -87,6 +87,48 @@ int _print_rev_str(char *specifier, va_list args)
 	return (len);
 }
 /**
+ * _print_rot13 - function to print rot13'ed string
+ * @specifier: specifier argument of pointer type
+ * @args: string argument
+ *
+ * Return: how many bytes of printed text
+ */
+int _print_rot13(char *specifier, va_list args)
+{
+	int i = 0;
+	int len = 0;
+
+	if (*specifier == 'R')
+	{
+		char *s = va_arg(args, char*);
+
+		if (!s)
+		{
+			s = "(null)";
+		}
+		else
+		{
+			while ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z'))
+			{
+				if ((s[i] > 'm' && s[i] <= 'z') || (s[i] > 'M' && s[i] <= 'Z'))
+				{
+					s[i] = s[i] - 13;
+					_putchar(s[i]);
+					len++;
+					break;
+				}
+				s[i] = s[i] + 13;
+				_putchar(s[i]);
+				len++;
+				break;
+			}
+			i++;
+		}
+	}
+	return (len);
+}
+
+/**
  * print_int - function to print int number
  * @n: integer argument
  *

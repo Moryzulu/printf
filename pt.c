@@ -22,7 +22,8 @@ int _printf(const char *format, ...)
 		{"c", _print_char},
 		{"s", _print_char_ptr},
 		{"b", _print_number},
-		{"r", _print_rev_str}
+		{"r", _print_rev_str},
+		{"R", _print_rot13}
 	};
 	va_start(args, format);
 	if (format == NULL)
@@ -38,7 +39,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			for (j = 0; j < 10; j++)
+			for (j = 0; j < 11; j++)
 			{
 				if (format[i + 1] == *conv[j].sp)
 				{
