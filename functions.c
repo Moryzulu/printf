@@ -97,17 +97,24 @@ int _print_rot13(char *specifier, va_list args)
 {
 	int i = 0;
 	int len = 0;
+	int alen = 0;
+	char s[100];
 
 	if (*specifier == 'R')
 	{
-		char *s = va_arg(args, char*);
+		char *a = va_arg(args, char*);
 
-		if (!s)
+		if (!a)
 		{
-			s = "(null)";
+			a = "(null)";
 		}
 		else
 		{
+			while (a[alen] != '\0')
+			{
+				s[alen] = a[alen];
+				alen++;
+			}
 			while ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z'))
 			{
 				if ((s[i] > 'm' && s[i] <= 'z') || (s[i] > 'M' && s[i] <= 'Z'))
@@ -115,14 +122,14 @@ int _print_rot13(char *specifier, va_list args)
 					s[i] = s[i] - 13;
 					_putchar(s[i]);
 					len++;
-					break;
+					i++;
 				}
 				s[i] = s[i] + 13;
 				_putchar(s[i]);
 				len++;
-				break;
+				i++;
+			
 			}
-			i++;
 		}
 	}
 	return (len);
