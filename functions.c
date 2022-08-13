@@ -128,7 +128,6 @@ int _print_rot13(char *specifier, va_list args)
 				_putchar(s[i]);
 				len++;
 				i++;
-			
 			}
 		}
 	}
